@@ -30,17 +30,27 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+
     {
-      name: 'Google Chrome',
+      name: 'chromium',
       use: { 
         ...devices['Desktop Chrome'],
-        channel: 'chrome',
         viewport: {width: 1900, height: 1080} 
        },
     },
 
     
+
   /* 
+
+  {
+      name: 'Microsoft Edge',
+      use: { 
+        ...devices['Desktop Edge'],
+        channel: 'msedge',
+        viewport: {width: 1900, height: 1080} 
+       },
+    },
 
    {
       name: 'Google Chrome',
@@ -74,27 +84,24 @@ export default defineConfig({
         viewport: {width: 1850, height: 1000}  
       },
     },
+
+     {
+      name: 'Mobile Safari',
+      use: { 
+        ...devices['iPhone 12 Pro Max'],
+       },
+    },
+
+    {
+      name: 'Mobile Chrome',
+      use: { 
+        ...devices['Pixel 5'],
+       },
+    },
+
 */
 
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
 
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
 
 });
