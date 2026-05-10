@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "tests-headless": "npx playwright test",
-    "tests-headed": "npx playwright test  --headed",
-    "test-tag-headless": "npx playwright test --grep @tag",
-    "test-tag-headed": "npx playwright test --headed --grep @a02",
-    "test-smoke": "npx playwright test --grep @smoke",
+    "tests": "npx playwright test",
+    "test:specific": "npx playwright test --grep fileName.spec.js",
+    "test:tag": "npx playwright test --grep @sep",
     "report": "npx playwright show-report"
   },
   "keywords": [],
