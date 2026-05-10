@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "tests": "npx playwright test",
-    "test:specific": "npx playwright test --grep fileName.spec.js",
-    "test:tag": "npx playwright test --grep @sep",
+    "tests-headless": "npx playwright test",
+    "tests-headed": "npx playwright test --headed",
+    "test-tag-headless": "npx playwright test --grep @tagName",
+    "test-tag-headed": "npx playwright test --grep @tagName --headed",
+    "test-smoke": "npx playwright test --grep @smoke",
     "report": "npx playwright show-report"
   },
   "keywords": [],
@@ -13,8 +15,11 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.54.2",
-    "@types/node": "^24.1.0",
-    "dotenv": "^17.3.1"
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^24.12.3",
+    "dotenv": "^17.4.2"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.4.0"
   }
 }

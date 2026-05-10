@@ -13,9 +13,21 @@ Week02 Review:
             playwright browsers
 
             Recording test videos
+            Trace for Debugging
             Local Desktop browser configurations
             Mobile browser configurations
 
         SEP Project
 
-Class starts at 10:05 AM EST
+Week05: Project Implementation Week
+
+        JavaScript version of the BDD & TDD
+
+
+npm playwright init@latest
+
+
+lowerCamel Case: automationPractice.spec.js
+
+Kebob-case: automation-practice.spec.js
+

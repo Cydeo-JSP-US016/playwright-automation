@@ -1,10 +1,5 @@
-// @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -28,7 +23,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    headless: false,
+    screenshot: 'on-first-failure',
+    video: 'on-first-retry'
+   
   },
 
   /* Configure projects for major browsers */
@@ -91,11 +88,5 @@ export default defineConfig({
     // },
   ],
 
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://localhost:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
 });
 

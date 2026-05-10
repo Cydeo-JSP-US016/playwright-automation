@@ -26,9 +26,9 @@ test.describe("Test Group", () => {
 
     await inputBox.fill("123");
 
-    await page.waitForTimeout(3000);
+    page.waitForTimeout(3000);
 
-    let actualInput = await inputBox.inputValue();
+    let actualInput = inputBox.inputValue();
 
     console.log(actualInput);
 
