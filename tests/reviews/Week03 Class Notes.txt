@@ -5,6 +5,7 @@ Topics:
     dotenv & JS faker
     SEP User Stories (14 User stories)
     Gherkin: Scenario, Feature, Background, When, Given, And, Then.
+    Prompt Files for playwright getBy Locators
    
 
 Next Week:
@@ -12,10 +13,63 @@ Next Week:
     Live CLass: GitHub Actions, 
                 Request fixture for API testing (GET, POST, PUT, PATCH, DELETE)
 
-Next Next Week:
-    Module05: Famework Utilization (BDD). ====> 1 user story
-    Live Class: BDD (2 user stories), TDD
+================================================
 
-Next Next Next Week:
-    Module06: TypeScript. 
-    Live Class: TypeScript Version of BDD & TDD Frameworks.
+GetByRole Locator
+    Key idea: Only when the element has a meaningful ARIA/implicit role and accessible name.
+
+    Use getByRole() when:
+        The element has a valid implicit role (button, link, heading, textbox, checkbox, etc.), or an explicit role attribute.
+        It also has a clear accessible name via text, aria-label, aria-labelledby, alt, or associated label.
+
+    Do not use it if:
+        The element is a generic div/span with no role and no useful text/label.
+        Multiple elements share the same role and name so the locator would not be unique.
+
+GetByText Locator
+    Key idea: Only when there is stable, meaningful visible text.
+
+    Use getByText() when:
+        The element has clear, unique visible text.
+        The text is relatively short and unlikely to change frequently.
+
+    Do not use it if:
+        The element is only an icon with no text.
+        The text is clearly dynamic (timestamps, counters, random IDs).
+        The only text is a very long paragraph or block where uniqueness is unclear.
+
+
+GetByLabel Locator
+    Key idea: Only when it is a labeled form control.
+
+    Use getByLabel() when:
+        The element is a form control (input, select, textarea, checkbox, radio, etc.).
+        It has an associated label (via for or wrapping) or an aria-label / aria-labelledby.
+
+    Do not use it if:
+        The element is not a form control.
+        There is no label or accessible label.
+
+
+GetByPlaceholder Locator
+    Key idea: Only when there is a meaningful placeholder on an input/textarea.
+
+    Use getByPlaceholder() when:
+        The element is an input or textarea.
+        It has a non‑empty, descriptive placeholder attribute.
+
+    Do not use it if:
+        There is no placeholder.
+        The placeholder is empty or extremely generic (“Enter text”, “Type here”) and not unique.
+
+
+GetByTestId Locator
+    Key idea: Only when there is a data-testid (or your configured test id attribute).
+
+    Use getByTestId() when:
+        The element has a data-testid attribute with a clear, unique value.
+
+    Do not use it if:
+        No data-testid attribute is present.
+
+
