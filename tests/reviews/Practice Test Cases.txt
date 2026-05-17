@@ -39,6 +39,8 @@ Steps:
 
 
 
+
+
 Payment Plan Page:
 
 Test Case: Verify that Step 2 stepper is blue and Step 1 stepper is green.

@@ -1,17 +1,24 @@
-Week03
+Week03 Review
 
 Topics:
     Playwright Review
     dotenv & JS faker
+    Prompt Files for playwright getBy Locators
+
     SEP User Stories (14 User stories)
     Gherkin: Scenario, Feature, Background, When, Given, And, Then.
-    Prompt Files for playwright getBy Locators
    
 
 Next Week:
     Module04: Jenkins (3 hours)
-    Live CLass: GitHub Actions, 
+    Live CLass: GitHub Actions
+                Browser & Context Fixtures
                 Request fixture for API testing (GET, POST, PUT, PATCH, DELETE)
+
+Next Next Week: Project Implementation Week
+        Playwright BDD Framework
+
+come back at 11:35 AM EST
 
 ================================================
 
