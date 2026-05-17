@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Start Application Step", () => {
+
   test.beforeEach(async ({ page }) => {
     let encodedCredentials = Buffer.from(
       `${process.env.SEP_USERNAME}:${process.env.SEP_PASSWORD}`,
@@ -11,7 +12,7 @@ test.describe("Start Application Step", () => {
     });
 
     await page.goto(process.env.SEP_QA_URL);
-    await page.waitForTimeout(3000);
+    
   });
 
   test("Verify that clicking the Terms & Conditions link opens a new Terms & Conditions tab", async ({
