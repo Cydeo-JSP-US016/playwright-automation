@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { CommonUI } from "./CommonUI";
+import { faker } from "@faker-js/faker";
 
 test.describe("Start Application Step", () => {
 
@@ -35,24 +36,20 @@ test.describe("Start Application Step", () => {
     page,
   }) => {
 
-    let firstNameField = page.locator("//input[@formcontrolname='firstName']");
-    let lastNameField = page.locator("//input[@formcontrolname='lastName']");
-    let phoneNumberField = page.locator("//input[@formcontrolname='phoneNumber']");
-    let emailField = page.locator("//input[@id='mat-input-2']");
-    let howDidYouHearDropDown = page.locator("//mat-label[normalize-space()='How did you hear about us?']");
-    let nextButtonOnStartApplication = page.locator("//button[@type='submit' and normalize-space()='Next']");
+    let firstName = faker.person.firstName();
+    let lastName = faker.person.lastName();
+    let email = faker.internet.email();
+    let phoneNumber = faker.string.numeric(10);  // ##########
+    let howDidYouHearOption = faker.helpers.arrayElement(["Facebook", "Instagram", "Google", "LinkedIN"]);
 
-    await firstNameField.fill("John");
-    await lastNameField.fill("Doe");
-    await phoneNumberField.fill("1234567890");
-    await emailField.fill("john.doe@example.com");
-
-    await howDidYouHearDropDown.click();
-    await page.click("//span[text()='Facebook']");
+    await CommonUI.enterPersonalDetails(page, firstName, lastName, email, phoneNumber, howDidYouHearOption);
 
     let startApplciationStepperCircle = page.locator("(//div[@class='step-circle'])[1]");
     await expect(startApplciationStepperCircle).toHaveCSS("background-color", "rgb(1, 201, 255)"); // blue color
 
+    await page.waitForTimeout(3000); 
+
+    let nextButtonOnStartApplication = page.locator("//button[@type='submit' and normalize-space()='Next']");
     await nextButtonOnStartApplication.click();
 
     await expect(startApplciationStepperCircle).toHaveCSS("background-color", "rgb(172, 245, 138)"); // green color
@@ -62,6 +59,33 @@ test.describe("Start Application Step", () => {
   test("Verify that personal input fields are enabled and accept user input", async ({
     page,
   }) => {
+
+    let firstNameField = page.locator("//input[@formcontrolname='firstName']");
+    let lastNameField = page.locator("//input[@formcontrolname='lastName']");
+    let phoneNumberField = page.locator("//input[@formcontrolname='phoneNumber']");
+    let emailField = page.locator("//input[@id='mat-input-2']");
+
+    await expect(firstNameField).toBeEnabled();
+    await expect(lastNameField).toBeEnabled();
+    await expect(phoneNumberField).toBeEnabled();
+    await expect(emailField).toBeEnabled();
+
+    let firstName = faker.person.firstName();
+    let lastName = faker.person.lastName();
+    let email = faker.internet.email();
+    let phoneNumber = faker.string.numeric(10); 
+
+    await firstNameField.fill(firstName);
+    await expect(firstNameField).toHaveValue(firstName);
+
+    await lastNameField.fill(lastName);
+    await expect(lastNameField).toHaveValue(lastName);
+
+    await phoneNumberField.fill(phoneNumber);
+    await expect(phoneNumberField).toHaveValue(phoneNumber);
+
+    await emailField.fill(email);
+    await expect(emailField).toHaveValue(email);
 
   });
 

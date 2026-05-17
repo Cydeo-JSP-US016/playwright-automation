@@ -39,7 +39,7 @@ Steps:
 
 
 
-
+===========================
 
 Payment Plan Page:
 
@@ -94,7 +94,7 @@ Steps:
 
 	4. Verify that the Step 2 stepper is blue.
 
-
+=======================================
 
 Review Step:
 
