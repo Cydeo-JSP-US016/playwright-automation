@@ -28,20 +28,41 @@ test.describe("Start Application Step", () => {
 
     await expect(termsConditionsHeading).toBeVisible();
     
+
   });
-
-
 
   test("Verify that the first stepper is blue initially and changes to green once Step 1 is completed", async ({
     page,
   }) => {
+
+    let firstNameField = page.locator("//input[@formcontrolname='firstName']");
+    let lastNameField = page.locator("//input[@formcontrolname='lastName']");
+    let phoneNumberField = page.locator("//input[@formcontrolname='phoneNumber']");
+    let emailField = page.locator("//input[@id='mat-input-2']");
+    let howDidYouHearDropDown = page.locator("//mat-label[normalize-space()='How did you hear about us?']");
+    let nextButtonOnStartApplication = page.locator("//button[@type='submit' and normalize-space()='Next']");
+
+    await firstNameField.fill("John");
+    await lastNameField.fill("Doe");
+    await phoneNumberField.fill("1234567890");
+    await emailField.fill("john.doe@example.com");
+
+    await howDidYouHearDropDown.click();
+    await page.click("//span[text()='Facebook']");
+
+    let startApplciationStepperCircle = page.locator("(//div[@class='step-circle'])[1]");
+    await expect(startApplciationStepperCircle).toHaveCSS("background-color", "rgb(1, 201, 255)"); // blue color
+
+    await nextButtonOnStartApplication.click();
+
+    await expect(startApplciationStepperCircle).toHaveCSS("background-color", "rgb(172, 245, 138)"); // green color
 
   });
 
   test("Verify that personal input fields are enabled and accept user input", async ({
     page,
   }) => {
-    
+
   });
 
 });
