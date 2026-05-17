@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { CommonUI } from "./CommonUI";
 import { faker } from "@faker-js/faker";
 
-test.describe("Start Application Step", () => {
+test.describe("Start Application Step @sep1", () => {
 
   test.beforeEach(async ({ page }) => {
    
