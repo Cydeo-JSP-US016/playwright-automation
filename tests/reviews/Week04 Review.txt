@@ -53,3 +53,23 @@ Next Next Week: TypeScript Programming, Playwright with TypeScript
 
         TypeScript version of Playwright BDD Framework
         TypeScript version of Playwright TDD Framework
+
+
+========================
+
+Next Class:
+    Git Operations:
+        Create repository on Github
+        Push your project to the Github
+        Create feature branches & being able to checkout
+
+    BDD:
+        Be able to write feature files scenarios
+        Be able to generate step definitions and run the step definitions (dryrun)
+        Be able to use POM (page object module)
+
+    Jenkins:
+        Be able to configure cucumber-report for jenkins job.
+
+    GitHub Actions:
+        Be able to create workflows
