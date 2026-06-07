@@ -5,7 +5,7 @@
   "scripts": {
     "tests-headless": "npx playwright test",
     "tests-headed": "npx playwright test --headed",
-    "test-tag-headless": "npx playwright test --grep @tagName",
+    "test-tag-headless": "npx playwright test --grep @get",
     "test-tag-headed": "npx playwright test --grep @getMethod --headed",
     "test-smoke": "npx playwright test --grep @smoke",
     "report": "npx playwright show-report"
